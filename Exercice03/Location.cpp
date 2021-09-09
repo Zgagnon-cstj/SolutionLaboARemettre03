@@ -16,51 +16,66 @@ void main()
 {
 setlocale(LC_ALL, "");
 
+   // declaration des constantes pour utiliser des valeures numeriques qui peuvent changer dansle temps mais pas lors de l'execution du programme
+   const double LOCATION = 45;
+   const int NB_KM_GRaTUIT = 250;
+   const double CONSO = 7.6;
+   const double COUT_KM_SURPLUS = 0.05;
+   const double COUT_ESSANCE = 1.35;
+
    //variables a nommer
-   int Km; // nombre de killomètres entrer par l'utilisateur
+   int Km; // nombre de kilomètres entrer par l'utilisateur
    int Days; // nombre de jours entrer par l'utilisateur
-   int grats; // nombre de killomètre gratuits
+   int grats; // nombre de kilomètre gratuits
    int location; // prix de la location par jours
-   int surplus; // Nombre de killomètre de surplus
-   float PrixSurplus; // coute des killomètres supplementaires
-   float NbLitres; // nombre de littres d'essance
-   float CoutEssance; // prix essance
-   float Resultat; // cout final avec gratuités
+   double PrixSurplus; // coute des kilomètres supplementaires
+   double NbLitres; // nombre de littres d'essance
+   double CoutEssance; // prix essance
+   double Resultat; // cout final avec gratuités
    // consommation du vehicule = 7.6l 100 km
 
-   // demander le killomètrage et le nombre de jours a l'utilisateur
-   std::cout << "entrer le nombre le killomètres parcourru : \n";
+   // demander le kilomètrage et le nombre de jours a l'utilisateur
+   std::cout << "entrer le nombre le kilomètres parcourru : ";
    std::cin >> Km;
    
-   std::cout << "entrer la durée du voyage en jours : \n";
+   std::cout << "entrer la durée du voyage en jours : ";
    std::cin >> Days;
-
-   //cout de la location
-   location = Days * 45;
-   //cout essance
-   NbLitres = Km * 7.6 / 100;
-   CoutEssance = NbLitres * 1.35;
-
-   // calculer les killomètres gratuits
-   grats = Days * 250;
-   if (Km > grats)
+   
+   if (Km >= 0 && Days >= 0)
    {
-      surplus = Km - grats;
-      PrixSurplus = surplus * 0.05;
-      Resultat = location + CoutEssance + PrixSurplus;
-      std::cout << " le prix total du voyage est de " << Resultat << std::endl;
+      //cout de la location
+      location = Days * LOCATION;
+      //cout essance
+      NbLitres = Km * CONSO / 100;
+      CoutEssance = NbLitres * COUT_ESSANCE;
+
+      // calculer les kilomètres gratuits
+      grats = Days * NB_KM_GRaTUIT;
+      if (Km > grats)
+      {
+         PrixSurplus = (Km - grats) * COUT_KM_SURPLUS;
+         Resultat = location + CoutEssance + PrixSurplus;
+         std::cout << "Cout du surplus de kilomètrage : " << PrixSurplus << "\n";
+         std::cout << "Cout de l'essance : " << CoutEssance << "\n";
+         std::cout << "Cout de la location : " << location << "\n";
+         std::cout << "Le cout total du voyage est de " << Resultat << std::endl;
+      }
+      else
+      {
+         // calcule prix total sans gratuités
+         Resultat = location + CoutEssance;
+
+         std::cout << "Cout de l'essance : " << CoutEssance << "\n";
+         std::cout << "Cout de la location : " << location << "\n";
+         std::cout << "Le cout total du voyage est de " << Resultat << std::endl;
+      }
+
    }
+
    else
    {
-      // calcule prix total sans gratuités
-      Resultat = location + CoutEssance;
-      std::cout << " le prix total du voyage est de " << Resultat << std::endl;
+      std::cout << "Veuillez entrer des nombres positifs \n";
    }
-
-   
-   
-
-   
 
    system("pause");
 
