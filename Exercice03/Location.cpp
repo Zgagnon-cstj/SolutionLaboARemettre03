@@ -4,8 +4,18 @@
 
 #include<iostream>
 
+// consommation du vehicule = 7.6l 100 km
+// prx de l'essance au littre = 1.35$
+// prix de location par jours = 45$
+// killomètres de gratuités = 250km / jours
+// prix pour le surplus de killomètres = 0.05$
+
+
 void main()
+
 {
+setlocale(LC_ALL, "");
+
    //variables a nommer
    int Km; // nombre de killomètres entrer par l'utilisateur
    int Days; // nombre de jours entrer par l'utilisateur

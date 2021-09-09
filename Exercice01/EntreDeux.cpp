@@ -6,6 +6,9 @@
 
 void main()
 {
+
+   setlocale(LC_ALL, "");
+
    // variables nécessaires
    int A;
    int B;

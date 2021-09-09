@@ -11,6 +11,9 @@
 
 void main()
 {
+
+   setlocale(LC_ALL, "");
+
    // nommer les variables nécessaires
    int A;
    int modulo;
