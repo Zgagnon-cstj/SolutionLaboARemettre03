@@ -11,7 +11,7 @@
 
 void main()
 {
-   // nommer les variables necessaires
+   // nommer les variables nécessaires
    int A;
    int modulo;
    int mod2;

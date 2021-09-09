@@ -6,22 +6,23 @@
 
 void main()
 {
-   int Km; // nombre de killometres entrer par l'utilisateur
+   //variables a nommer
+   int Km; // nombre de killomètres entrer par l'utilisateur
    int Days; // nombre de jours entrer par l'utilisateur
-   int grats; // nombre de killometre gratuits
+   int grats; // nombre de killomètre gratuits
    int location; // prix de la location par jours
-   int surplus; // Nombre de killometre de surplus
-   float PrixSurplus; // coute des killometres supplementaires
+   int surplus; // Nombre de killomètre de surplus
+   float PrixSurplus; // coute des killomètres supplementaires
    float NbLitres; // nombre de littres d'essance
    float CoutEssance; // prix essance
-   float Resultat; // cout final avec gratuite
+   float Resultat; // cout final avec gratuités
    // consommation du vehicule = 7.6l 100 km
 
-   // demander le killometrage et le nombre de jours a l'utilisateur
-   std::cout << "entrer le nombre le killometres parcourru : \n";
+   // demander le killomètrage et le nombre de jours a l'utilisateur
+   std::cout << "entrer le nombre le killomètres parcourru : \n";
    std::cin >> Km;
    
-   std::cout << "entrer la duree du voyage en jours : \n";
+   std::cout << "entrer la durée du voyage en jours : \n";
    std::cin >> Days;
 
    //cout de la location
@@ -30,7 +31,7 @@ void main()
    NbLitres = Km * 7.6 / 100;
    CoutEssance = NbLitres * 1.35;
 
-   // calculer les killmetres gratuits
+   // calculer les killomètres gratuits
    grats = Days * 250;
    if (Km > grats)
    {
@@ -41,7 +42,7 @@ void main()
    }
    else
    {
-      // calcule prix total sans gratuites
+      // calcule prix total sans gratuités
       Resultat = location + CoutEssance;
       std::cout << " le prix total du voyage est de " << Resultat << std::endl;
    }

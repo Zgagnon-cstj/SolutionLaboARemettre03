@@ -6,19 +6,19 @@
 
 void main()
 {
-   // variables necessaires
+   // variables nécessaires
    int A;
    int B;
    int C;
 
-   //demander a l'utilisateur d'entrer les nombres demander
+   //demander a l'utilisateur d'entrer les nombres nécessaires
    std::cout << "entrer un nombre entier :\n";
    std::cin >> A;
 
-   std::cout << "entrer un deuxieme nombre entier :\n";
+   std::cout << "entrer un deuxième nombre entier :\n";
    std::cin >> B;
 
-   std::cout << "enter un troisieme nombre entier :\n";
+   std::cout << "enter un troisième nombre entier :\n";
    std::cin >> C;
 
    //si C se trouve entre A et B
@@ -34,7 +34,7 @@ void main()
    //si C ne se trouve pas entre A et B ni B et A
    else if ((C > A && C > B) || (C < A && C < B))
    {
-      std::cout << C << " ne se trouve pas entre les nombres entrers\n";
+      std::cout << C << " ne se trouve pas entre les nombres entrés\n";
    }
 
 
